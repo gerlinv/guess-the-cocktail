@@ -1,0 +1,36 @@
+.mtj.tmp/
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+
+bin/
+build/
+.gradle
+.gradletasknamecache
+gradle-app.setting
+!gradle-wrapper.jar
+
+.vscode/
+.code-workspace
+.idea/
+*.iml
+
+data/
+
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*~
+
+# Log files
+*.log
+
+# Yarn
+yarn-error.log
+.yarn-integrity
