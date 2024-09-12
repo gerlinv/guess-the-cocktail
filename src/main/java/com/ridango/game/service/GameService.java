@@ -17,6 +17,8 @@ import com.ridango.game.repository.HighscoreRepository;
 @Service
 public class GameService {
 
+    private static final int MAX_ATTEMPTS = 5;
+
     private CocktailApiService cocktailApiService;
     private HighscoreService highscoreService;
     private final Set<Long> usedCocktails = new HashSet<>();
@@ -90,7 +92,7 @@ public class GameService {
     protected int playRound(Cocktail cocktail) {
         String cocktailName = cocktail.getName();
         String maskedName = CocktailNameUtils.maskCocktailName(cocktailName);
-        int attempts = 5;
+        int attempts = MAX_ATTEMPTS;
 
         while (attempts > 0) {
             displayGuessPrompt(maskedName, attempts);
@@ -131,9 +133,8 @@ public class GameService {
     protected Cocktail getNewCocktail() {
         Cocktail cocktail = null;
         int attempts = 0;
-        int maxAttempts = 5;
     
-        while (attempts < maxAttempts) {
+        while (attempts < MAX_ATTEMPTS) {
             cocktail = cocktailApiService.getRandomCocktail();
             if (cocktail == null) {
                 attempts++;

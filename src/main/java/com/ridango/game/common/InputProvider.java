@@ -20,9 +20,9 @@ public class InputProvider {
             if (scanner.hasNextLine()) {
                 return scanner.nextLine();
             } else {
+                // Could ask again for user input / add more options, but for the sake of simplicity, left it like this at the moment
                 return "no";
             }
-        // Could ask again for user input, but for the sake of simplicity, left it like this
         } catch (NoResultException e) {
             return "no";
         }

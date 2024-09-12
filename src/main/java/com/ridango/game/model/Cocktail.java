@@ -10,7 +10,7 @@ import lombok.NonNull;
 @NoArgsConstructor
 public class Cocktail {
     
-    private Long id;
+    @NonNull private Long id;
     @NonNull private String name;
     @NonNull private String instructions;
     @NonNull private String category;
